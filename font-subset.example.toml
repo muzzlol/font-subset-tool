@@ -1,0 +1,85 @@
+# Font Subsetting Configuration
+# This TOML file overrides the default settings in subset_fonts.py
+# Usage: python3 subset_fonts.py -i fonts/ -o output/ --dir --config font-subset.toml
+
+[subset]
+# Unicode ranges to include in the subset
+# Each string is a Unicode range in pyftsubset format
+# The default profile below is optimized for English websites
+unicodes = [
+    "U+0020-007E",  # Basic ASCII (A-Z, a-z, 0-9, punctuation)
+    "U+00A0",       # Non-breaking space
+    "U+00A9",       # Copyright ©
+    "U+00AE",       # Registered trademark ®
+    "U+2013-2014",  # En dash (–), Em dash (—)
+    "U+2018-2019",  # Smart single quotes (' ')
+    "U+201C-201D",  # Smart double quotes (" ")
+    "U+2026",       # Ellipsis (…)
+    "U+2122",       # Trademark ™
+    "U+2190-2193",  # Arrows (← ↑ → ↓)
+    "U+2022",       # Bullet point (•)
+    "U+00B7",       # Middle dot (·)
+    "U+2039-203A"   # Single angle quotes (‹ ›)
+]
+
+# OpenType layout features to preserve
+# Common features: kern (kerning), liga (ligatures), calt (contextual alternates)
+layout_features = ["kern", "liga", "calt"]
+
+# Output format flavor
+# Options: woff, woff2, ttf, otf
+flavor = "woff2"
+
+# File extension for output files
+# Should match the flavor in most cases
+output_extension = "woff2"
+
+# Whether to desubroutinize the font
+# This can reduce file size but may increase processing time
+desubroutinize = true
+
+# Additional pyftsubset arguments (advanced)
+# Pass any extra flags directly to pyftsubset
+additional_args = []
+
+
+# ============================================
+# Example: Extended character set with accents
+# ============================================
+# Uncomment and modify to include Western European accented characters
+# 
+# unicodes = [
+#     "U+0020-007E",   # Basic ASCII
+#     "U+00A0-00FF",   # Latin-1 Supplement (includes À, É, ñ, etc.)
+#     "U+0100-017F",   # Latin Extended-A (Ā, ē, etc.)
+#     "U+2013-2014",   # Dashes
+#     "U+2018-2019",   # Smart single quotes
+#     "U+201C-201D",   # Smart double quotes
+#     "U+2026",        # Ellipsis
+#     "U+2022"         # Bullet
+# ]
+
+
+# ============================================
+# Example: Minimal character set (even smaller)
+# ============================================
+# Uncomment for absolute minimal subset (alphanumeric only)
+#
+# unicodes = [
+#     "U+0020-007E"   # Just basic ASCII
+# ]
+# layout_features = ["kern"]  # Only kerning, no ligatures
+
+
+# ============================================
+# Example: Icon/Display fonts
+# ============================================
+# For icon fonts or fonts with special symbols
+#
+# unicodes = [
+#     "U+0020",        # Space
+#     "U+E000-F8FF"    # Private Use Area (where icon fonts live)
+# ]
+# layout_features = []
+# desubroutinize = false
+

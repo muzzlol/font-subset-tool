@@ -1,0 +1,15 @@
+[project]
+name = "font-subset-tool"
+version = "0.1.0"
+description = "Subset fonts for web use - reduces file sizes by keeping only essential characters"
+requires-python = ">=3.8"
+dependencies = [
+    "brotli>=1.1.0",
+    "fonttools>=4.60.1",
+]
+
+[project.scripts]
+subset-fonts = "subset_fonts:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.1.0"]

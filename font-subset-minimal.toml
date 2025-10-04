@@ -1,0 +1,11 @@
+# Minimal configuration - even smaller files
+[subset]
+unicodes = [
+    "U+0020-007E"  # Just basic ASCII
+]
+layout_features = ["kern"]  # Only kerning
+flavor = "woff2"
+output_extension = "woff2"
+desubroutinize = true
+additional_args = []
+
