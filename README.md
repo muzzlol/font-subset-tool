@@ -1,6 +1,10 @@
 # Font Subset Tool
 
-A Python tool for subsetting fonts for web use. Reduces font file sizes by keeping only essential characters while maintaining typography features.
+We hate slow page loads, FOIT and FOUT over here.
+
+Fonts on the web are often a major bottleneck for page load times, frequently adding 200-500KB+ per typeface when using the full set of characters - which isn't required for most websites. 
+This tool dramatically reduces font file sizes (typically by 75-85%) by keeping only the characters you actually [need](#default-character-set), while preserving essential typography features like kerning and ligatures and allowing you to customize what is required with [config files](#configuration).
+
 
 ## Features
 
@@ -133,24 +137,6 @@ The tool generates:
 - Filenames with `-subset` suffix
 - Typical size reduction: 75-85%
 
-### Example Results
-
-```
-Original: 56.9 KB → Subset: 11.6 KB (79.6% reduction)
-```
-
-## Development
-
-```bash
-# Run the tool
-uv run python subset_fonts.py --help
-
-# Add dependencies
-uv add package-name
-
-# Update dependencies
-uv sync
-```
 
 ## License
 
