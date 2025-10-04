@@ -21,7 +21,7 @@ This project uses [uv](https://docs.astral.sh/uv/) for dependency management:
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/muzzlol/font-subset-tool.git
 cd font-subset-tool
 
 # Install dependencies
