@@ -1,6 +1,6 @@
 # Font Subset Tool
 
-We hate slow page loads, FOIT and FOUT over here.
+We hate slow page loads, [FOIT](https://fonts.google.com/knowledge/glossary/foit) and [FOUT](https://fonts.google.com/knowledge/glossary/fout) over here.
 
 Fonts on the web are often a major bottleneck for page load times, frequently adding 200-500KB+ per typeface when using the full set of characters - which isn't required for most websites. 
 This tool dramatically reduces font file sizes (typically by 75-85%) by keeping only the characters you actually [need](#default-character-set), while preserving essential typography features like kerning and ligatures and allowing you to customize what is required with [config files](#configuration).
